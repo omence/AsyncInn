@@ -1,1 +1,15 @@
 # AsyncInn
+
+What is the purpose of the program?
+
+The purpose of the application is manage a hotel chain business side.  Meaning, managing hotels, rooms ameneties and so on.
+
+How do I run the program?
+
+There will be a home page that links to other pages with act as user intefaces for the Hotels Database.
+
+So far, I have created a new Web Application, completed the Schema for the Database, made the classes for the schema, migrated the design, and created the database.
+
+The application is still in the beginning stages of development, there is currently no user functionality. 
+
+Tools used, C#, ASP.NET Core, SystemIO Images to come later in development.
