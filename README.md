@@ -15,5 +15,5 @@ The application is still in the beginning stages of development, there is curren
 Tools used, C#, ASP.NET Core, SystemIO Images to come later in development.
 
 ![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(1).png)
-![image]()
-![image]()
+![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(2).png)
+![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(3).png)
