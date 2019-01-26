@@ -9,6 +9,7 @@ namespace AsyncInn.Models
 {
     public class Hotel
     {
+
         public int ID { get; set; }
 
         [Required]
