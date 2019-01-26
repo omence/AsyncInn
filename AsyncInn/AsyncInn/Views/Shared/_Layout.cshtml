@@ -7,16 +7,19 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-   
+   <h1>Welcome to Async Inn</h1>
 
     <header>
-        <a href="/">Home</a>
-        <a href="/Hotel">Hotel</a>
-        <a href="/Rooms">Rooms</a>
-        <a href="/Amenities">Amenities</a>
+        <nav class="navbar">
+        <a href="/" class="navbar-brand">Home</a>
+        <a href="/Hotel" class="navbar-brand">Hotel</a>
+        <a href="/Rooms"class="navbar-brand" >Rooms</a>
+        <a href="/Amenities"class="navbar-brand" >Amenities</a>
+            </nav>
     </header>
     <div>
         @RenderBody()
     </div>
+    <footer>Foot stuff coming</footer>
 </body>
 </html>
