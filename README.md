@@ -6,7 +6,7 @@ The purpose of the application is manage a hotel chain business side.  Meaning, 
 
 How do I run the program?
 
-There will be a home page that links to other pages with act as user intefaces for the Hotels Database.
+There will be a home page that links to other pages with act as user intefaces for the Hotels Database.  The database consists of 5 tables, a Hotel, Hotel Room, Room, Room Amenatie and Ameneties.  There are 2 composit key tables, the Hotel Room and the Room Aneneties tables. The rest of the table have their own IDs.
 
 So far, I have created a new Web Application, completed the Schema for the Database, made the classes for the schema, migrated the design, and created the database.
 
