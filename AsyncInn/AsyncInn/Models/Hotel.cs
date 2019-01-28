@@ -12,17 +12,17 @@ namespace AsyncInn.Models
 
         public int ID { get; set; }
 
-        [Required]
+        
         [Display(Name = "Name of the Hotel:")]
         public string Name { get; set; }
 
-        [Required]
+        
         [Display(Name = "City Location:")]
         public string Address { get; set; }
 
-        [Required]
+        
         [Display(Name = "Hotel Phone Number:")]
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         //Navigation Properties
 
