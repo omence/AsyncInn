@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AsyncInn.Migrations
 {
     [DbContext(typeof(AsyncInnDbContext))]
-    [Migration("20190125233800_initial")]
-    partial class initial
+    [Migration("20190128200632_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,8 @@ namespace AsyncInn.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -44,11 +45,15 @@ namespace AsyncInn.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("Phone");
+                    b.Property<string>("Phone");
 
                     b.HasKey("ID");
 
                     b.ToTable("Hotels");
+
+                    b.HasData(
+                        new { ID = 1, Address = "Seattle", Name = "Seattle Async", Phone = "2065555550" }
+                    );
                 });
 
             modelBuilder.Entity("AsyncInn.Models.HotelRoom", b =>
@@ -80,7 +85,8 @@ namespace AsyncInn.Migrations
 
                     b.Property<int>("Layout");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
