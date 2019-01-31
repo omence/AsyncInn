@@ -2,9 +2,10 @@
 
 <html>
 <head>
-    <link href="~/StyleSheet.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width" />
 
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="~/StyleSheet.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -12,11 +13,13 @@
 
     <header>
         <nav class="navbar">
-        <a href="/" class="navbar-brand">Home</a>
-        <a href="/Hotel" class="navbar-brand">Hotel</a>
-        <a href="/Rooms"class="navbar-brand" >Rooms</a>
-        <a href="/Amenities"class="navbar-brand" >Amenities</a>
-            </nav>
+            <a href="/" class="navbar-brand">Home</a>
+            <a href="/Hotel" class="navbar-brand">Hotel</a>
+            <a href="/Rooms" class="navbar-brand">Rooms</a>
+            <a href="/Amenities" class="navbar-brand">Amenities</a>
+            <a href="/HotelRooms" class="navbar-brand">Hotel Rooms</a>
+            <a href="/RoomAmenities" class="navbar-brand">Room Amenities</a>
+        </nav>
     </header>
     <div>
         @RenderBody()

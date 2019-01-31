@@ -21,9 +21,16 @@ namespace AsyncInn.Controllers
         }
 
         // GET: Amenities
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string SearchString)
         {
+
+
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                return View(await _context.SearchAmenities(SearchString));
+            }
             return View(await _context.GetAmeneties());
+
         }
 
         // GET: Amenities/Details/5

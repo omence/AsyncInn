@@ -62,6 +62,12 @@ namespace AsyncInn.Models.Services
         {
             return _context.Hotels.Any(e => e.ID == id);
         }
+
+        public async Task<IEnumerable<Hotel>> SearchHotels(string SearchString)
+        {
+            return await _context.Hotels.Where(c => c.Address.ToLower() == SearchString.ToLower()).ToListAsync();
+            
+        }
     }
 
 }

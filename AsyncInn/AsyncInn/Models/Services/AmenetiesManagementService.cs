@@ -60,6 +60,11 @@ namespace AsyncInn.Models.Services
         {
             return _context.Amenities.Any(e => e.ID == id);
         }
+
+        public async Task<IEnumerable<Amenities>> SearchAmenities(string SearchString)
+        {
+            return await _context.Amenities.Where(c => c.Name.ToLower() == SearchString.ToLower()).ToListAsync();
+        }
     }
 
 

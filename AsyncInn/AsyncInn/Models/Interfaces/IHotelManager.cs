@@ -22,5 +22,7 @@ namespace AsyncInn.Models.Interfaces
         Task DeleteHotel(int ID);
 
         bool HotelExist(int id);
+
+        Task<IEnumerable<Hotel>> SearchHotels(string SearchString);
     }
 }

@@ -62,6 +62,12 @@ namespace AsyncInn.Models.Services
         {
             return _context.Rooms.Any(e => e.ID == id);
         }
+
+        public async Task<IEnumerable<Room>> SearchRooms(string SearchString)
+        {
+            return await _context.Rooms.Where(c => c.Name.ToLower() == SearchString.ToLower()).ToListAsync();
+
+        }
     }
 
 }
