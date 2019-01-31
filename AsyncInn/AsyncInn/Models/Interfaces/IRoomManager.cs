@@ -22,5 +22,7 @@ namespace AsyncInn.Models.Interfaces
         Task DeleteRoom(int id);
 
         bool RoomExist(int id);
+
+        Task<IEnumerable<Room>> SearchRooms(string SearchString);
     }
 }
