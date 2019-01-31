@@ -13,6 +13,9 @@ namespace AsyncInn.Controllers
 {
     public class AmenitiesController : Controller
     {
+        /// <summary>
+        /// brings in interface
+        /// </summary>
         private readonly IAmenitiesManager _context;
 
         public AmenitiesController(IAmenitiesManager context)
@@ -20,7 +23,11 @@ namespace AsyncInn.Controllers
             _context = context;
         }
 
-        // GET: Amenities
+        /// <summary>
+        /// Displays all amenities and search results
+        /// </summary>
+        /// <param name="SearchString"></param>
+        /// <returns>Search results and all instances to view</returns>
         public async Task<IActionResult> Index(string SearchString)
         {
 
@@ -33,7 +40,11 @@ namespace AsyncInn.Controllers
 
         }
 
-        // GET: Amenities/Details/5
+        /// <summary>
+        /// Displays the details of amenity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Details to view</returns>
         public async Task<IActionResult> Details(int id)
         {
             if (id == null)
@@ -50,7 +61,10 @@ namespace AsyncInn.Controllers
             return View(amenities);
         }
 
-        // GET: Amenities/Create
+        /// <summary>
+        /// Displays the create view
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             return View();
@@ -121,7 +135,11 @@ namespace AsyncInn.Controllers
             return View(amenities);
         }
 
-        // GET: Amenities/Delete/5
+        /// <summary>
+        /// Displays the delete view
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
@@ -138,7 +156,11 @@ namespace AsyncInn.Controllers
             return View(amenities);
         }
 
-        // POST: Amenities/Delete/5
+        /// <summary>
+        /// Deletes an instance
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -147,6 +169,11 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks to see if instance exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool AmenitiesExists(int id)
         {
             return _context.AmenitiesExist(id);

@@ -14,6 +14,9 @@ namespace AsyncInn.Controllers
 {
     public class HotelController : Controller
     {
+        /// <summary>
+        /// Brings in interface
+        /// </summary>
         private readonly IHotelManager _context;
 
         public HotelController(IHotelManager context)
@@ -21,6 +24,11 @@ namespace AsyncInn.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Handles both the search and show all methods
+        /// </summary>
+        /// <param name="SearchString"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Index(string SearchString)
         {
          
@@ -29,11 +37,16 @@ namespace AsyncInn.Controllers
             {
                 return View(await _context.SearchHotels(SearchString));
             }
+            var hotels = _context.GetHotels();
             return View(await _context.GetHotels());
            
         }
 
-        // GET: Hotel/Details/5
+        /// <summary>
+        /// Displays details of hotel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int id)
         {
             
@@ -68,7 +81,11 @@ namespace AsyncInn.Controllers
             return View(hotel);
         }
 
-        // GET: Hotel/Edit/5
+        /// <summary>
+        /// Displays update view
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int id)
         {
             if (id == null)
@@ -118,7 +135,11 @@ namespace AsyncInn.Controllers
             return View(hotel);
         }
 
-        // GET: Hotel/Delete/5
+        /// <summary>
+        /// displays delete view
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
@@ -135,7 +156,11 @@ namespace AsyncInn.Controllers
             return View(hotel);
         }
 
-        // POST: Hotel/Delete/5
+        /// <summary>
+        /// Deletes and instance
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -144,6 +169,11 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks to see if instance exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool HotelExists(int id)
         {
             return _context.HotelExist(id);
