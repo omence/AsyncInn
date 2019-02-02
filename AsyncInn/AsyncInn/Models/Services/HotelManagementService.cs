@@ -56,7 +56,13 @@ namespace AsyncInn.Models.Services
         /// <returns></returns>
         public async Task<IEnumerable<Hotel>> GetHotels()
         {
-            return await _context.Hotels.ToListAsync();
+            var count = await _context.Hotels.ToListAsync();
+            foreach (var i in count)
+            {
+                i.RoomCount = _context.HotelRooms.Where(r => r.HotelID == i.ID).Count();
+            }
+
+            return count;
         }
 
         /// <summary>
