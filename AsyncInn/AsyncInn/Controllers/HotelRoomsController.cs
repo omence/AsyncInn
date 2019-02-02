@@ -125,7 +125,7 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Delete/5
-        public async Task<IActionResult> Delete(int roomID, int hotelID)
+        public async Task<IActionResult> Delete(int? roomID, int? hotelID)
         {
             if (roomID == null || hotelID == null)
             {
