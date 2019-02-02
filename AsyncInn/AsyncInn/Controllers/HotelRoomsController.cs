@@ -125,7 +125,7 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Delete/5
-        public async Task<IActionResult> Delete(int? roomID, int? hotelID)
+        public async Task<IActionResult> Delete(decimal? roomID, int? hotelID)
         {
             if (roomID == null || hotelID == null)
             {
@@ -146,7 +146,7 @@ namespace AsyncInn.Controllers
         // POST: HotelRooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int roomID, int hotelID)
+        public async Task<IActionResult> DeleteConfirmed(decimal roomID, int hotelID)
         {
             var hotelRoom = await _context.HotelRooms.Include(i => i.Hotel).Include(j => j.Room).FirstOrDefaultAsync(hr => hr.RoomID == roomID && hr.HotelID == hotelID);
             _context.HotelRooms.Remove(hotelRoom);
