@@ -30,7 +30,7 @@ namespace AsyncInn
             services.AddMvc();
 
             services.AddDbContext<AsyncInnDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"])
             );
             services.AddScoped<IHotelManager, HotelManagementService>();
             services.AddScoped<IRoomManager, RoomManagementService>();
