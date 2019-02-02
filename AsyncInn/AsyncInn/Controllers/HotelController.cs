@@ -37,7 +37,7 @@ namespace AsyncInn.Controllers
             {
                 return View(await _context.SearchHotels(SearchString));
             }
-            var hotels = _context.GetHotels();
+            
             return View(await _context.GetHotels());
            
         }
