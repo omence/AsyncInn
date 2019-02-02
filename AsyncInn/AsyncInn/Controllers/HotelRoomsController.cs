@@ -125,16 +125,14 @@ namespace AsyncInn.Controllers
         }
 
         // GET: HotelRooms/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int roomID, int hotelID)
         {
-            if (id == null)
+            if (roomID == null || hotelID == null)
             {
                 return NotFound();
             }
 
-            var hotelRoom = await _context.HotelRooms
-                .Include(h => h.Hotel)
-                .FirstOrDefaultAsync(m => m.HotelID == id);
+            var hotelRoom = await _context.HotelRooms.Include(i => i.Hotel).Include(j => j.Room).FirstOrDefaultAsync(hr => hr.RoomID == roomID && hr.HotelID == hotelID);
             if (hotelRoom == null)
             {
                 return NotFound();
