@@ -62,7 +62,7 @@ namespace AsyncInn.Models.Services
                 i.RoomCount = _context.HotelRooms.Where(r => r.HotelID == i.ID).Count();
             }
 
-            return count;
+            return count; 
         }
 
         /// <summary>
