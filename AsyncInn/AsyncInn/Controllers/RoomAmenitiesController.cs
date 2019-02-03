@@ -130,11 +130,7 @@ namespace AsyncInn.Controllers
         // GET: RoomAmenities/Delete/5
         public async Task<IActionResult> Delete(int? amenitiesID, int? roomID)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+         
             var roomAmenities = await _context.RoomAmenities
                 .Include(r => r.Amenities)
                 .Include(r => r.Room)
