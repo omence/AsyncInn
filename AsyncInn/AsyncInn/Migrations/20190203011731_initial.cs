@@ -28,7 +28,8 @@ namespace AsyncInn.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true)
+                    Phone = table.Column<string>(nullable: true),
+                    RoomCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +43,8 @@ namespace AsyncInn.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false),
-                    Layout = table.Column<int>(nullable: false)
+                    Layout = table.Column<int>(nullable: false),
+                    amenitiesCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -99,6 +101,43 @@ namespace AsyncInn.Migrations
                         principalTable: "Rooms",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Amenities",
+                columns: new[] { "ID", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Microwave" },
+                    { 2, "Iron" },
+                    { 3, "Bar" },
+                    { 4, "Hair Dryer" },
+                    { 5, "Fridge" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Hotels",
+                columns: new[] { "ID", "Address", "Name", "Phone", "RoomCount" },
+                values: new object[,]
+                {
+                    { 1, "Seattle", "Seattle Async", "2065555550", 0 },
+                    { 2, "Tacoma", "Tacoma Async", "2065555550", 0 },
+                    { 3, "Kent", "Kent Async", "2065555550", 0 },
+                    { 4, "Renton, wa", "Renton Async", "2065555550", 0 },
+                    { 5, "Shoreline, wa", "Shoreline Async", "2065555550", 0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Rooms",
+                columns: new[] { "ID", "Layout", "Name", "amenitiesCount" },
+                values: new object[,]
+                {
+                    { 1, 0, "Small", 0 },
+                    { 2, 1, "Meduium", 0 },
+                    { 3, 2, "Large", 0 },
+                    { 4, 0, "Small Room", 0 },
+                    { 5, 1, "Medium Room", 0 },
+                    { 6, 2, "Large Room", 0 }
                 });
 
             migrationBuilder.CreateIndex(
