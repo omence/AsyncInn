@@ -177,7 +177,7 @@ namespace XUnitTestProject1
 
                 await service.CreateAmeneties(amenities);
                 amenities.Name = "Bar";
-
+                await service.UpdateAmeneties(amenities);
                 // Assert
                 Assert.Equal("Bar", amenities.Name);
 

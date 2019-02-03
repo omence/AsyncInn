@@ -207,7 +207,7 @@ namespace XUnitTestProject1
 
                 await service.CreateHotel(hotel);
                 hotel.Address = "Tacoma";
-                //await service.Updatehotel(hotel);
+                await service.Updatehotel(hotel);
                 // Assert
                 Assert.Equal("Tacoma", hotel.Address);
 

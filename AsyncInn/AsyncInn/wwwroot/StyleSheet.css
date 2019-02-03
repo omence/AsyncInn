@@ -1,3 +1,15 @@
-﻿body {
-    background-color:azure;
+﻿html {
+    background: url(http://geekgirlcon.com/wp-content/uploads/2015/07/Sheraton.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+body {
+   
+    text-align: center;
+   background-color:aliceblue;
+}
+
+h1 {
+    margin: 50px;
 }

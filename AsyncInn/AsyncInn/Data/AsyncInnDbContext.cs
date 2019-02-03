@@ -20,6 +20,7 @@ namespace AsyncInn.Data
             modelBuilder.Entity<HotelRoom>().HasKey(ce => new { ce.HotelID, ce.RoomNumber });
             modelBuilder.Entity<RoomAmenities>().HasKey(ce => new { ce.AmenitiesID, ce.RoomID });
 
+            //Seeds the DB with info
             modelBuilder.Entity<Hotel>().HasData(
             new Hotel
             {
