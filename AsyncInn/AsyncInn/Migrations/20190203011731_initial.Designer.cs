@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AsyncInn.Migrations
 {
     [DbContext(typeof(AsyncInnDbContext))]
-    [Migration("20190128200632_update")]
-    partial class update
+    [Migration("20190203011731_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -33,6 +33,33 @@ namespace AsyncInn.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Amenities");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Name = "Microwave"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Name = "Iron"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Name = "Bar"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Name = "Hair Dryer"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Name = "Fridge"
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.Hotel", b =>
@@ -47,13 +74,53 @@ namespace AsyncInn.Migrations
 
                     b.Property<string>("Phone");
 
+                    b.Property<int>("RoomCount");
+
                     b.HasKey("ID");
 
                     b.ToTable("Hotels");
 
                     b.HasData(
-                        new { ID = 1, Address = "Seattle", Name = "Seattle Async", Phone = "2065555550" }
-                    );
+                        new
+                        {
+                            ID = 1,
+                            Address = "Seattle",
+                            Name = "Seattle Async",
+                            Phone = "2065555550",
+                            RoomCount = 0
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Address = "Tacoma",
+                            Name = "Tacoma Async",
+                            Phone = "2065555550",
+                            RoomCount = 0
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Address = "Kent",
+                            Name = "Kent Async",
+                            Phone = "2065555550",
+                            RoomCount = 0
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Address = "Renton, wa",
+                            Name = "Renton Async",
+                            Phone = "2065555550",
+                            RoomCount = 0
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Address = "Shoreline, wa",
+                            Name = "Shoreline Async",
+                            Phone = "2065555550",
+                            RoomCount = 0
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.HotelRoom", b =>
@@ -88,9 +155,55 @@ namespace AsyncInn.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<int>("amenitiesCount");
+
                     b.HasKey("ID");
 
                     b.ToTable("Rooms");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Layout = 0,
+                            Name = "Small",
+                            amenitiesCount = 0
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Layout = 1,
+                            Name = "Meduium",
+                            amenitiesCount = 0
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Layout = 2,
+                            Name = "Large",
+                            amenitiesCount = 0
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Layout = 0,
+                            Name = "Small Room",
+                            amenitiesCount = 0
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Layout = 1,
+                            Name = "Medium Room",
+                            amenitiesCount = 0
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Layout = 2,
+                            Name = "Large Room",
+                            amenitiesCount = 0
+                        });
                 });
 
             modelBuilder.Entity("AsyncInn.Models.RoomAmenities", b =>
