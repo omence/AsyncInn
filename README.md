@@ -16,6 +16,6 @@ The user has the ability to view Hotels, Rooms, Amenties, hotel rooom and room a
 
 Tools used, C#, ASP.NET Core, SystemIO, Bootstrap, and a shared HTML Layout.
 
-![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(1).png)
-![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(2).png)
-![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(3).png)
+![image]()
+![image]()
+![image]()
