@@ -12,7 +12,7 @@ There is a home page that links to other pages with act as user intefaces for th
 
 So far, I have created a new Web Application, completed the Schema for the Database, made the classes for the schema, migrated the design, created the database added a basic user interface with full CRUD abilities.
 
-The use has the ability to view Hotels, Rooms and Amenties that are currently in the database.  the can choose the option to create a new instance of any of these, they can edit the current Hotels, rooms or amenities and delete any of them.  The drop down boxes are populated with user usefull information in place of ID numbers for example.  They are required to provide all neccessary information before a new instance can be created.
+The use has the ability to view Hotels, Rooms and Amenties that are currently in the database.  the can choose the option to create a new instance of any of these, they can edit the current Hotels, rooms or amenities and delete any of them.  The drop down boxes are populated with user useful information in place of ID numbers for example.  They are required to provide all neccessary information before a new instance can be created.
 
 Tools used, C#, ASP.NET Core, SystemIO, Bootstrap, and a shared HTML Layout.
 
