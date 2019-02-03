@@ -19,6 +19,7 @@ namespace AsyncInn.Models
         [Display(Name = "Number of Bedrooms:")]
         public int Layout { get; set; }
 
+        [Display(Name = "Number of Amenities:")]
         public int amenitiesCount { get; set; }
 
         //Navigation Properties

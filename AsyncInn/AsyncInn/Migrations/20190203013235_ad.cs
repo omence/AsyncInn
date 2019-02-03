@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AsyncInn.Migrations
 {
-    public partial class initial : Migration
+    public partial class ad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
