@@ -16,6 +16,14 @@ The user has the ability to view Hotels, Rooms, Amenties, hotel rooom and room a
 
 Tools used, C#, ASP.NET Core, SystemIO, Bootstrap, and a shared HTML Layout.
 
+The user will land on the home page, where they have the option to manage any of the options shown in the nav bar.
+
 ![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(12).png)
+
+Next they can view all the current hotels in this case.  They are given the option to Create, Edit and delete.
+
 ![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(13).png)
+
+This shows the create new page.
+
 ![image](https://github.com/omence/AsyncInn/blob/master/Screenshot%20(14).png)
