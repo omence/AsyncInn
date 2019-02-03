@@ -19,14 +19,21 @@ namespace AsyncInn.Controllers
             _context = context;
         }
 
-        // GET: RoomAmenities
+        /// <summary>
+        /// Gets a list of all room amenities and sends to view
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             var asyncInnDbContext = _context.RoomAmenities.Include(r => r.Amenities).Include(r => r.Room);
             return View(await asyncInnDbContext.ToListAsync());
         }
 
-        // GET: RoomAmenities/Details/5
+        /// <summary>
+        /// Show the details of one room amenity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,7 +53,10 @@ namespace AsyncInn.Controllers
             return View(roomAmenities);
         }
 
-        // GET: RoomAmenities/Create
+        /// <summary>
+        /// Creates a new instance of room amenities
+        /// </summary>
+        /// <returns>List of all rroom amenities</returns>
         public IActionResult Create()
         {
             ViewData["AmenitiesID"] = new SelectList(_context.Amenities, "ID", "Name");
@@ -72,7 +82,11 @@ namespace AsyncInn.Controllers
             return View(roomAmenities);
         }
 
-        // GET: RoomAmenities/Edit/5
+        /// <summary>
+        /// Allows user to edit details of room amenities
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -127,7 +141,12 @@ namespace AsyncInn.Controllers
             return View(roomAmenities);
         }
 
-        // GET: RoomAmenities/Delete/5
+        /// <summary>
+        /// Show an are you sure prompt when delete option is selected
+        /// </summary>
+        /// <param name="amenitiesID"></param>
+        /// <param name="roomID"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int? amenitiesID, int? roomID)
         {
          
@@ -143,7 +162,12 @@ namespace AsyncInn.Controllers
             return View(roomAmenities);
         }
 
-        // POST: RoomAmenities/Delete/5
+        /// <summary>
+        /// Deletes the selected instance
+        /// </summary>
+        /// <param name="amenitiesID"></param>
+        /// <param name="roomID"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int amenitiesID, int roomID)
@@ -157,6 +181,11 @@ namespace AsyncInn.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks to see if the instance exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>true or false</returns>
         private bool RoomAmenitiesExists(int id)
         {
             return _context.RoomAmenities.Any(e => e.AmenitiesID == id);

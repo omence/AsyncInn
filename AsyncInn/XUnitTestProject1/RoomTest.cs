@@ -181,7 +181,7 @@ namespace XUnitTestProject1
 
                 await service.CreateRoom(room);
                 room.Name = "quillers";
-
+                await service.UpdateRoom(room);
                 // Assert
                 Assert.Equal("quillers", room.Name);
 
